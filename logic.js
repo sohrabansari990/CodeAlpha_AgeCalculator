@@ -135,6 +135,9 @@ submit.addEventListener("click", (e)=>{
     
     if (days < 0) {
         months--;
+        // Get days in previous month and add to negative days
+        const prevMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+        days += prevMonth.getDate();
     }
     if (months < 0) {
         years--;
